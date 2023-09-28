@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>EchoMeet</title>
+
+    <style>
+      #root {
+        width: 100vw;
+        height: 100vh;
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      body {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/@zegocloud/zego-uikit-prebuilt/zego-uikit-prebuilt.js"></script>
+  <script>
+    // Generate a Token by calling a method.
+    // @param 1: appID
+    // @param 2: serverSecret
+    // @param 3: Room ID
+    // @param 4: User ID
+    // @param 5: Username
+    const roomID = "room01";
+    const userID = Math.floor(Math.random() * 10000) + "";
+    const userName = "I'm Batman 🦇";
+    const appID = 1315481730;
+    const serverSecret = "5a668cebe4c29a069377dc4f1b38009e";
+    const TOKEN = ZegoUIKitPrebuilt.generateKitTokenForTest(
+      appID,
+      serverSecret,
+      roomID,
+      userID,
+      userName
+    );
+
+    const zp = ZegoUIKitPrebuilt.create(TOKEN);
+    zp.joinRoom({
+      container: document.querySelector("#root"),
+      sharedLinks: [
+        {
+          url:
+            window.location.origin +
+            window.location.pathname +
+            "?roomID=" +
+            roomID,
+        },
+      ],
+      scenario: {
+        mode: ZegoUIKitPrebuilt.VideoConference,
+      },
+    });
+  </script>
+</html>

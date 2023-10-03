@@ -26,6 +26,13 @@
   Welcome to EchoMeet, where connections flourish face-to-face!
 </p>
 
+<p align="center">
+    <br> 
+  🔺🔺🔺🔺For some reason there is a token authorisation error for <b>EchoMeet</b> on Windows browser.🔺🔺🔺🔺
+  <br>
+  🔺🔺But works perfectly on linux/mobile phones.🔺🔺
+</p>
+
 ## 📝 Table of Contents
 - [About](#about)
 - [Getting Started](#getting_started)

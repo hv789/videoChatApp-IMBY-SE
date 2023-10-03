@@ -1,0 +1,11 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+body{
+  margin: 0;
+}
+#app {
+  width: 100vw;
+  height: 100vh;
+}
